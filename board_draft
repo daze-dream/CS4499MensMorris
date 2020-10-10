@@ -1,0 +1,212 @@
+/***************************************************************
+ * Name:      testMain.cpp
+ * Purpose:   Code for Application Frame
+ * Author:    Saurav (sauravpawar0710@gmail.com)
+ * Created:   2020-10-10
+ * Copyright: Saurav ()
+ * License:
+ **************************************************************/
+
+#include "testMain.h"
+#include <wx/msgdlg.h>
+
+//(*InternalHeaders(testFrame)
+#include <wx/bitmap.h>
+#include <wx/icon.h>
+#include <wx/image.h>
+#include <wx/intl.h>
+#include <wx/settings.h>
+#include <wx/string.h>
+//*)
+
+//helper functions
+enum wxbuildinfoformat {
+    short_f, long_f };
+
+wxString wxbuildinfo(wxbuildinfoformat format)
+{
+    wxString wxbuild(wxVERSION_STRING);
+
+    if (format == long_f )
+    {
+#if defined(__WXMSW__)
+        wxbuild << _T("-Windows");
+#elif defined(__UNIX__)
+        wxbuild << _T("-Linux");
+#endif
+
+#if wxUSE_UNICODE
+        wxbuild << _T("-Unicode build");
+#else
+        wxbuild << _T("-ANSI build");
+#endif // wxUSE_UNICODE
+    }
+
+    return wxbuild;
+}
+
+//(*IdInit(testFrame)
+const long testFrame::ID_BUTTON1 = wxNewId();
+const long testFrame::ID_BUTTON2 = wxNewId();
+const long testFrame::ID_BUTTON3 = wxNewId();
+const long testFrame::ID_BUTTON4 = wxNewId();
+const long testFrame::ID_BUTTON5 = wxNewId();
+const long testFrame::ID_BUTTON6 = wxNewId();
+const long testFrame::ID_BUTTON7 = wxNewId();
+const long testFrame::ID_BUTTON8 = wxNewId();
+const long testFrame::ID_BUTTON9 = wxNewId();
+const long testFrame::ID_BUTTON10 = wxNewId();
+const long testFrame::ID_BUTTON11 = wxNewId();
+const long testFrame::ID_BUTTON12 = wxNewId();
+const long testFrame::ID_BUTTON13 = wxNewId();
+const long testFrame::ID_BUTTON14 = wxNewId();
+const long testFrame::ID_BUTTON15 = wxNewId();
+const long testFrame::ID_BUTTON16 = wxNewId();
+const long testFrame::ID_BUTTON17 = wxNewId();
+const long testFrame::ID_BUTTON18 = wxNewId();
+const long testFrame::ID_BUTTON19 = wxNewId();
+const long testFrame::ID_BUTTON20 = wxNewId();
+const long testFrame::ID_BUTTON21 = wxNewId();
+const long testFrame::ID_BUTTON22 = wxNewId();
+const long testFrame::ID_BUTTON23 = wxNewId();
+const long testFrame::ID_BUTTON24 = wxNewId();
+const long testFrame::ID_MENUITEM1 = wxNewId();
+const long testFrame::idMenuAbout = wxNewId();
+const long testFrame::ID_STATUSBAR1 = wxNewId();
+//*)
+
+BEGIN_EVENT_TABLE(testFrame,wxFrame)
+    //(*EventTable(testFrame)
+    //*)
+END_EVENT_TABLE()
+
+testFrame::testFrame(wxWindow* parent,wxWindowID id)
+{
+    //(*Initialize(testFrame)
+    wxMenu* Menu1;
+    wxMenu* Menu2;
+    wxMenuBar* MenuBar1;
+    wxMenuItem* MenuItem1;
+    wxMenuItem* MenuItem2;
+
+    Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
+    SetClientSize(wxSize(965,358));
+    SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BACKGROUND));
+    {
+    	wxIcon FrameIcon;
+    	FrameIcon.CopyFromBitmap(wxBitmap(wxImage(_T("C:\\Users\\PawarSauravPravin(UM\\Downloads\\circle-icon-16075.png"))));
+    	SetIcon(FrameIcon);
+    }
+    Button1 = new wxButton(this, ID_BUTTON1, _("Label"), wxPoint(8,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    Button1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button2 = new wxButton(this, ID_BUTTON2, _("Label"), wxPoint(456,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+    Button2->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button3 = new wxButton(this, ID_BUTTON3, _("Label"), wxPoint(880,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    Button3->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button4 = new wxButton(this, ID_BUTTON4, _("Label"), wxPoint(8,168), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+    Button4->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button5 = new wxButton(this, ID_BUTTON5, _("Label"), wxPoint(152,64), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
+    Button5->SetBackgroundColour(wxColour(0,255,64));
+    Button6 = new wxButton(this, ID_BUTTON6, _("Label"), wxPoint(152,168), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
+    Button6->SetBackgroundColour(wxColour(0,255,64));
+    Button7 = new wxButton(this, ID_BUTTON7, _("Label"), wxPoint(8,320), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
+    Button7->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button8 = new wxButton(this, ID_BUTTON8, _("Label"), wxPoint(152,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
+    Button8->SetBackgroundColour(wxColour(0,255,64));
+    Button9 = new wxButton(this, ID_BUTTON9, _("Label"), wxPoint(456,64), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
+    Button9->SetBackgroundColour(wxColour(0,255,64));
+    Button10 = new wxButton(this, ID_BUTTON10, _("Label"), wxPoint(760,64), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON10"));
+    Button10->SetBackgroundColour(wxColour(0,255,64));
+    Button11 = new wxButton(this, ID_BUTTON11, _("Label"), wxPoint(760,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON11"));
+    Button11->SetBackgroundColour(wxColour(0,255,64));
+    Button12 = new wxButton(this, ID_BUTTON12, _("Label"), wxPoint(760,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON12"));
+    Button12->SetBackgroundColour(wxColour(0,255,64));
+    Button13 = new wxButton(this, ID_BUTTON13, _("Label"), wxPoint(456,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON13"));
+    Button13->SetBackgroundColour(wxColour(0,255,64));
+    Button14 = new wxButton(this, ID_BUTTON14, _("Label"), wxPoint(880,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON14"));
+    Button14->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button15 = new wxButton(this, ID_BUTTON15, _("Label"), wxPoint(880,320), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON15"));
+    Button15->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button16 = new wxButton(this, ID_BUTTON16, _("Label"), wxPoint(456,320), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON16"));
+    Button16->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHT));
+    Button17 = new wxButton(this, ID_BUTTON17, _("Label"), wxPoint(456,112), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON17"));
+    Button17->SetBackgroundColour(wxColour(255,128,128));
+    Button18 = new wxButton(this, ID_BUTTON18, _("Label"), wxPoint(304,168), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON18"));
+    Button18->SetBackgroundColour(wxColour(255,128,128));
+    Button19 = new wxButton(this, ID_BUTTON19, _("Label"), wxPoint(616,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON19"));
+    Button19->SetBackgroundColour(wxColour(255,128,128));
+    Button20 = new wxButton(this, ID_BUTTON20, _("Label"), wxPoint(456,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON20"));
+    Button20->SetBackgroundColour(wxColour(255,128,128));
+    Button21 = new wxButton(this, ID_BUTTON21, _("Label"), wxPoint(304,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON21"));
+    Button21->SetBackgroundColour(wxColour(255,128,128));
+    Button22 = new wxButton(this, ID_BUTTON22, _("Label"), wxPoint(616,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON22"));
+    Button22->SetBackgroundColour(wxColour(255,128,128));
+    Button23 = new wxButton(this, ID_BUTTON23, _("Label"), wxPoint(304,112), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON23"));
+    Button23->SetBackgroundColour(wxColour(255,128,128));
+    Button24 = new wxButton(this, ID_BUTTON24, _("Label"), wxPoint(616,112), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON24"));
+    Button24->SetBackgroundColour(wxColour(255,128,128));
+    MenuBar1 = new wxMenuBar();
+    Menu1 = new wxMenu();
+    MenuItem1 = new wxMenuItem(Menu1, ID_MENUITEM1, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
+    Menu1->Append(MenuItem1);
+    MenuBar1->Append(Menu1, _("&File"));
+    Menu2 = new wxMenu();
+    MenuItem2 = new wxMenuItem(Menu2, idMenuAbout, _("About\tF1"), _("Show info about this application"), wxITEM_NORMAL);
+    Menu2->Append(MenuItem2);
+    MenuBar1->Append(Menu2, _("Help"));
+    SetMenuBar(MenuBar1);
+    StatusBar1 = new wxStatusBar(this, ID_STATUSBAR1, 0, _T("ID_STATUSBAR1"));
+    int __wxStatusBarWidths_1[1] = { -1 };
+    int __wxStatusBarStyles_1[1] = { wxSB_NORMAL };
+    StatusBar1->SetFieldsCount(1,__wxStatusBarWidths_1);
+    StatusBar1->SetStatusStyles(1,__wxStatusBarStyles_1);
+    SetStatusBar(StatusBar1);
+    Center();
+
+    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&testFrame::OnButton1Click);
+    Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&testFrame::OnButton7Click);
+    Connect(ID_BUTTON20,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&testFrame::OnButton20Click);
+    Connect(ID_BUTTON23,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&testFrame::OnButton23Click);
+    Connect(ID_MENUITEM1,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&testFrame::OnQuit);
+    Connect(idMenuAbout,wxEVT_COMMAND_MENU_SELECTED,(wxObjectEventFunction)&testFrame::OnAbout);
+    Connect(wxID_ANY,wxEVT_CLOSE_WINDOW,(wxObjectEventFunction)&testFrame::OnClose);
+    //*)
+}
+
+testFrame::~testFrame()
+{
+    //(*Destroy(testFrame)
+    //*)
+}
+
+void testFrame::OnQuit(wxCommandEvent& event)
+{
+    Close();
+}
+
+void testFrame::OnAbout(wxCommandEvent& event)
+{
+    wxString msg = wxbuildinfo(long_f);
+    wxMessageBox(msg, _("Welcome to..."));
+}
+
+void testFrame::OnButton7Click(wxCommandEvent& event)
+{
+}
+
+void testFrame::OnButton1Click(wxCommandEvent& event)
+{
+}
+
+void testFrame::OnClose(wxCloseEvent& event)
+{
+}
+
+void testFrame::OnButton20Click(wxCommandEvent& event)
+{
+}
+
+void testFrame::OnButton23Click(wxCommandEvent& event)
+{
+}
