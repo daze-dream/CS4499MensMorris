@@ -1,0 +1,26 @@
+public class Board() {
+    private Board b;            //board constructor
+    private int squares[][];    //squares on the board
+
+    vector<int> p1moves;           //possible moves for player 1
+    vector<int> p2moves;           //possible moves for player 2
+
+    vector<int> occupied_cells;     //all the occupied cells
+
+    private void setSquares() {             //set squares on the board
+		this.squares = new Square[7][7];
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				Square temp = new Square(this, new Point(j, i));
+				this.squares[i][j] = temp;
+			}
+		}
+	}
+
+	public vector<int> getAllMills() {                              //total mills
+		return this.allMills;
+	}
+	public Boolean isMill(/* positions on the board*/) {             //check if it is a mill
+
+	}
+}
