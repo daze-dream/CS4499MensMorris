@@ -1,0 +1,45 @@
+This algorithm assumes you know the total number of moves each player can perform and will generate the moves ahead of time and will simply call them once the game is in play.
+
+Algorithm function generate_moves():
+for(int i = 0; i < total_moves; i++):
+int spot = rand() % 13; //generate a random number between 0 and 13
+p1moves.push_back(spot);
+int spot2 = rand() % 13;
+p2moves.push_back(spot2);
+
+This algorithm assumes the players have the same number of moves hence the are in the same for loop. The for loop will simply generate the total_moves (which is the total number of moves for each player) and give random numbers between 0 and 13. These are placed into their respective vectors and are used in your code.
+
+Generate a random number between a starting and an end point.
+In this case you want to pick a square on the board that the player will move to during their turn.
+
+The easiest case - generate the spots each player can move once you know how many squares your board has.
+
+Your board has 7x7 = 14 total squares.
+
+You can use randint to generate total number of spots from 0 to 13(13 because arrays count from 0) and insert these spots in the vectors p1moves and p2moves
+- rand() % 100 + 1 will go between 1 and 100 and rand() % 100 will generate between 0 and 99
+
+You would need a boolean to keep track of which player is playing if you want to generate numbers during game play and also if two players cannot occupy the same square, you would need to use a struct square to keep track of whether that square is already occupied and keep generating a random number if it is until you find a suitable square.
+
+struct squares{
+int row;
+int col;
+bool is_occupied;
+} square;
+
+if playerTurn:
+int col = rand() % 7; //generate the column
+int row = rand() % 7; //generate the row
+//check if this is occupied
+while( board[row][col].is_occupied){
+//generate
+int col = rand() % 7;
+int row = rand() % 7;
+}
+//when not occupied
+square.row = row;
+square.col = col;
+if playerOneTurn:
+p1moves.push_back(square);
+else
+p1moves.push_back(square);
